@@ -5,7 +5,7 @@ import { LuUser2 } from "react-icons/lu"
 import { RiBriefcase2Line } from "react-icons/ri"
 import SearchModal from '../modal/search-modal';
 import BriefcaseModal from '../modal/briefcase-modal';
-import { handleOutSideClickEvent } from '@/lib/utils/OutsideClick';
+import { OutSideClickEvent } from '@/lib/utils/OutsideClick';
 const icons = [
     {
         icon: <BiSearch />,
