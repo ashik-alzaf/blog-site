@@ -23,37 +23,35 @@ const icons = [
 const RightSideContent = () => {
     const [openSearchbar, setOpenSearchbar] = useState(false);
     const [briefcase, setBriefcase] = useState(false);
-    const searchModalRef = useRef(null);
-    handleOutSideClickEvent(searchModalRef, setOpenSearchbar);
-
-    const briefcaseModalRef = useRef(null);
-    handleOutSideClickEvent(briefcaseModalRef, setBriefcase);
     const [sticky, setSticky] = useState(false);
+    const searchModalRef = useRef(null);
+    const briefcaseModalRef = useRef(null);
+    handleOutSideClickEvent(searchModalRef, () => setOpenSearchbar(false));
+    handleOutSideClickEvent(briefcaseModalRef, () => setBriefcase(false));
+
     const handleOpen = (item) => {
         switch (item?.action) {
             case "one": setOpenSearchbar((prev) => !prev)
                 break;
             case "three": setBriefcase((prev) => !prev)
                 break;
-            default: console.log('')
         }
-
     }
+
+
     const handleClose = (item) => {
         switch (item) {
             case "one": setOpenSearchbar(false)
                 break;
             case "two": setBriefcase(false)
                 break;
-            default: console.log('')
         }
 
     }
     return (
         <div>
             <div
-                ref={searchModalRef}
-                className={` flex items-center gap-x-6  ${sticky ? "text-gray-700" : "text-white"
+                className={`flex items-center gap-x-6  ${sticky ? "text-gray-700" : "text-white"
                     }`}
             >
                 {icons?.map((item, itemIndex) => (
@@ -62,7 +60,7 @@ const RightSideContent = () => {
                         key={itemIndex}
                         className={`text-xl hover:text-[#DC2F15] duration-300  ${openSearchbar && item.action === 'one'
                             ? "invisible"
-                            : "visible"}
+                            : "visible"
                             }`}
                     >
                         {item.icon}
@@ -89,7 +87,6 @@ const RightSideContent = () => {
                     handleClose={handleClose}
                 />
             </div>
-
             {/* briefcaseModal */}
             <div ref={briefcaseModalRef}
                 className={`bg-[#121418] size-80 right-5  shadow-lg  z-40  transition-all transform duration-500 ease-in-out   ${briefcase
@@ -97,11 +94,9 @@ const RightSideContent = () => {
                     : "opacity-0 scale-95 invisible"
                     }  ${sticky ? "fixed top-[82px] right-0" : "absolute top-[82px]"}`}
             >
-
                 <BriefcaseModal
                     handleClose={handleClose}
                 />
-
             </div>
         </div>
     );

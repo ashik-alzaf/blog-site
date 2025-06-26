@@ -15,9 +15,7 @@ export default function Home() {
         <Slider />
       </div>
       <Demo />
-      <div className="w-full">
-        <NavigationMenuDemo />
-      </div>
+      <NavigationMenuDemo />
       <div className=" lg:w-[1200px] mx-auto">
         <BlogSection />
         <Material />

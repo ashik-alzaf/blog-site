@@ -1,20 +1,33 @@
+// "use client"
+// import { useEffect, } from "react"
+
+// export const handleOutSideClickEvent = (ref, setIsVisiable) => {
+//     useEffect(() => {
+//         const handleOutsideClick = (event) => {
+//             if (ref.current && !ref.current.contains(event.target)) {
+//                 setIsVisiable()
+//             }
+//         }
+//         document.addEventListener('mousedown', handleOutsideClick);
+//         return () => document.removeEventListener('mousedown', handleOutsideClick)
+
+//     }, [ref, setIsVisiable])
+// }
 "use client"
-import { useEffect, } from "react"
+import { useEffect } from "react";
 
-export const handleOutSideClickEvent = (subButtonRef, setIsVisiable) => {
+export function handleOutSideClickEvent(ref, handler) {
     useEffect(() => {
-        const handleOutsideClick = (event) => {
-            if (subButtonRef.current && !subButtonRef.current.contains(event.target)) {
-                setIsVisiable(false)
-
+        function handleClick(event) {
+            if (ref.current && !ref.current.contains(event.target)) {
+                handler();
             }
         }
 
-        document.addEventListener('mousedown', handleOutsideClick);
+        document.addEventListener("mousedown", handleClick);
 
-        return (() => {
-            document.removeEventListener('mousedown', handleOutsideClick)
-        })
-    }, [subButtonRef, setIsVisiable])
+        return () => {
+            document.removeEventListener("mousedown", handleClick);
+        };
+    }, [ref, handler]);
 }
-

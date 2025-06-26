@@ -56,7 +56,6 @@ const components = [
 ]
 
 export function NavigationMenuDemo() {
-
     return (
         <div className="bg-[#121418] flex items-center py-5 px-20">
             <Image
@@ -139,21 +138,6 @@ export function NavigationMenuDemo() {
                                     </NavigationMenuLink>
                                     <NavigationMenuLink asChild>
                                         <Link href="#">Blocks</Link>
-                                    </NavigationMenuLink>
-                                </li>
-                            </ul>
-                        </NavigationMenuContent>
-                    </NavigationMenuItem>
-                    <NavigationMenuItem>
-                        <NavigationMenuTrigger>With Icon</NavigationMenuTrigger>
-                        <NavigationMenuContent>
-                            <ul className="w-[300px]">
-                                <li>
-                                    <NavigationMenuLink asChild>
-                                        <Link href="#" className="flex items-center gap-2">
-                                            <CircleCheckIcon />
-                                            Done
-                                        </Link>
                                     </NavigationMenuLink>
                                 </li>
                             </ul>
