@@ -14,49 +14,40 @@ const Footer = () => {
                             news portal to encourage inspiration and critical thinking.
                         </p>
                     </div>
-
                     <ul className='col-span-1'>
                         <h2 className='text-xl font-semibold tracking-wide uppercase'>Categories</h2>
                         <li>
                             {footerData[0]?.categories?.map((categori, categoriId) => (
-
-                                <div key={categoriId} className='mb-3 mt-5 text-sm  text-gray-500 cursor-pointer hover:text-[#E93314] duration-300'>
+                                <div key={categoriId} className='mb-3 mt-5 text-sm  text-gray-500 cursor-pointer hover:text-[#E93314] duration-300 hover:underline underline-offset-2 '>
                                     {categori?.name}
                                 </div>
-
                             ))}
                         </li>
-
                     </ul>
                     <ul className='col-span-1'>
                         <h2 className='text-xl font-semibold tracking-wide uppercase'>Links</h2>
                         <li>
                             {footerData[0]?.links?.map((link, linkID) => (
-
-                                <div key={linkID} className='mb-3 mt-5 text-sm  text-gray-500 cursor-pointer hover:text-[#E93314] duration-300'>
+                                <div key={linkID} className='mb-3 mt-5 text-sm  text-gray-500 cursor-pointer hover:text-[#E93314] hover:underline underline-offset-2 duration-300'>
                                     {link?.name}
                                 </div>
-
                             ))}
                         </li>
-
                     </ul>
                     <ul className='col-span-1'>
                         <h2 className='text-xl font-semibold tracking-wide uppercase'>Follow Us</h2>
                         <li className='flex gap-3'>
                             {footerData[0]?.followUs?.map((Icon, followUsID) => (
-
                                 <Link href={Icon?.link} target='_blank' key={followUsID} className='bg-[#F8F7F5] shadow-xs size-10 border flex items-center justify-center rounded-full mt-5 text-sm  text-gray-500 cursor-pointer hover:text-[#E93314] duration-300'>
                                     {Icon?.icon}
                                 </Link>
-
                             ))}
                         </li>
                     </ul>
                 </div>
                 <div className='border-b mt-10'></div>
                 <div className='py-7'>
-                    <p className='text-sm'> <Link className='text-[#E93314]' href={''}>Mohammed Ashik</Link> <span className='text-gray-500'>© 2024. All Rights Reserved.</span></p>
+                    <p className='text-sm'> <Link className='text-[#E93314]' href={'#'}>Mohammed Ashik</Link> <span className='text-gray-500'>&copy; 2024. All Rights Reserved.</span></p>
                 </div>
             </div>
         </div>

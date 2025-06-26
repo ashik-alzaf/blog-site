@@ -1,12 +1,11 @@
 import { RxCross1 } from "react-icons/rx";
 import { LuSearch } from "react-icons/lu";
 
-const SearchModal = ({ handleClose, searchModalRef }) => {
+const SearchModal = ({ handleClose }) => {
     return (
-
-        <div ref={searchModalRef}>
+        <div>
             <button
-                onClick={() => handleClose("BiSearch")}
+                onClick={() => handleClose("one")}
                 className="absolute right-20 top-10"
             >
                 <RxCross1
@@ -14,7 +13,7 @@ const SearchModal = ({ handleClose, searchModalRef }) => {
                     size={30}
                 />
             </button>
-            <div className="w-8/12 mx-auto flex flex-col justify-center h-[410px] ">
+            <div className="w-8/12 mx-auto flex flex-col justify-center h-[410px]">
                 <div className="relative">
                     <input id="search"
                         type="search"

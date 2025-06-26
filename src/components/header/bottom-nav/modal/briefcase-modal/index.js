@@ -1,11 +1,10 @@
 import { RxCross1 } from 'react-icons/rx';
 
-const BriefcaseModal = ({ handleClose,briefcaseModalRef }) => {
+const BriefcaseModal = ({ handleClose }) => {
     return (
-
-        <div ref={briefcaseModalRef}>
-            <div className="flex   justify-end p-2">
-                <button onClick={() => handleClose("RiBriefcase2Line")}>
+        <div >
+            <div className="flex  justify-end p-2">
+                <button onClick={() => handleClose("two")}>
                     <RxCross1
                         className="text-white hover:-rotate-90 duration-300"
                         size={20}
@@ -16,7 +15,6 @@ const BriefcaseModal = ({ handleClose,briefcaseModalRef }) => {
                 No products in the cart.
             </div>
         </div>
-
     );
 };
 
