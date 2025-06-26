@@ -26,8 +26,8 @@ const RightSideContent = () => {
     const [sticky, setSticky] = useState(false);
     const searchModalRef = useRef(null);
     const briefcaseModalRef = useRef(null);
-    handleOutSideClickEvent(searchModalRef, () => setOpenSearchbar(false));
-    handleOutSideClickEvent(briefcaseModalRef, () => setBriefcase(false));
+    OutSideClickEvent(searchModalRef, () => setOpenSearchbar(false));
+    OutSideClickEvent(briefcaseModalRef, () => setBriefcase(false));
 
     const handleOpen = (item) => {
         switch (item?.action) {
